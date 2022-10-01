@@ -55,6 +55,9 @@ public class FrmVentas extends javax.swing.JFrame {
         tblVentas = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblDetalleVentas = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Administrador ventas");
@@ -179,12 +182,12 @@ public class FrmVentas extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblSalirVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salir.png"))); // NOI18N
-        jPanel2.add(lblSalirVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
+        jPanel2.add(lblSalirVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
 
         lblReportesVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reporte.png"))); // NOI18N
         jPanel2.add(lblReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 70, 490));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 70, 580));
 
         tblVentas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         tblVentas.setModel(new javax.swing.table.DefaultTableModel(
@@ -197,17 +200,34 @@ public class FrmVentas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblVentas);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 960, 400));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 960, 250));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(73, 73, 73));
-        jLabel2.setText("De doble clic sobre la venta para seleccionarla.");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jLabel2.setText("DETALLES DE LA FACTURA");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 1030, 490));
+        tblDetalleVentas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(tblDetalleVentas);
+
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 960, 190));
+
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(73, 73, 73));
+        jLabel3.setText("De doble clic sobre la venta para seleccionarla.");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 1030, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -255,6 +275,7 @@ public class FrmVentas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -265,8 +286,10 @@ public class FrmVentas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JLabel lblReportesVentas;
     public javax.swing.JLabel lblSalirVentas;
+    public javax.swing.JTable tblDetalleVentas;
     public javax.swing.JTable tblVentas;
     public javax.swing.JTextField txtApellidoClienteVentas;
     public javax.swing.JTextField txtFechaVentas;

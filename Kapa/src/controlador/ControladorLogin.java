@@ -8,7 +8,6 @@ import modelo.UsuarioDAO;
 import modelo.UsuarioVO;
 import vista.FrmLogin;
 import vista.FrmMenu;
-import vista.FrmVentas;
 
 public class ControladorLogin implements ActionListener {
     FrmLogin vLogin = new FrmLogin();

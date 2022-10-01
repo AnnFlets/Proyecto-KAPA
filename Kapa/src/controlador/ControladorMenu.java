@@ -33,7 +33,7 @@ public class ControladorMenu implements ActionListener, WindowListener{
         this.vVentas.setVisible(true);
         this.vVentas.setLocationRelativeTo(null);
         this.vVentas.setResizable(false);
-        this.vVentas.setSize(1090,790);
+        this.vVentas.setSize(1090,900);
     }
     
     @Override

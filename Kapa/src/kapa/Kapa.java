@@ -1,9 +1,12 @@
 package kapa;
 
-import conexion.Conector;
 import controlador.ControladorLogin;
 import controlador.ControladorMenu;
 import controlador.ControladorVenta;
+import modelo.ClienteDAO;
+import modelo.ClienteVO;
+import modelo.DetalleFacturaDAO;
+import modelo.DetalleFacturaVO;
 import modelo.UsuarioDAO;
 import modelo.UsuarioVO;
 import modelo.VentaDAO;
@@ -26,9 +29,12 @@ public class Kapa {
          */
         UsuarioVO uvo = new UsuarioVO();
         UsuarioDAO udao = new UsuarioDAO();
+        ClienteVO cvo = new ClienteVO();
+        ClienteDAO cdao = new ClienteDAO();
         VentaVO vvo = new VentaVO();
         VentaDAO vdao = new VentaDAO();
-        //480,640
+        DetalleFacturaVO dfvo = new DetalleFacturaVO();
+        DetalleFacturaDAO dfdao = new DetalleFacturaDAO();
         /**
          * Controladores
          */
@@ -42,10 +48,5 @@ public class Kapa {
         vLogin.setLocationRelativeTo(null);
         vLogin.setResizable(false);
         vLogin.setSize(480,660);
-        
-        /*Prueba de conexión
-        Conector conector = new Conector();
-        conector.conectar();
-        */
     }
 }
