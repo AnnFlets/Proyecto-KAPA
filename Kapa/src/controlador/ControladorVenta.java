@@ -1,11 +1,13 @@
 package controlador;
 
+import extras.Extras;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.ClienteDAO;
 import modelo.ClienteVO;
@@ -28,7 +30,16 @@ public class ControladorVenta implements ActionListener, WindowListener, MouseLi
     ProductoDAO pdao = new ProductoDAO();
     DetalleFacturaVO dfvo = new DetalleFacturaVO();
     DetalleFacturaDAO dfdao = new DetalleFacturaDAO();
+    Extras extras = new Extras();
+    DefaultTableModel modeloTablaVentas;
+    DefaultTableModel modeloDetalle;
+    boolean banderaReporte = false;
 
+    /**
+     * Controlador con parámetro
+     *
+     * @param vVentas -> Representa la vista del administrador de ventas
+     */
     public ControladorVenta(FrmVentas vVentas) {
         this.vVentas = vVentas;
         this.vVentas.addWindowListener(this);
@@ -39,7 +50,7 @@ public class ControladorVenta implements ActionListener, WindowListener, MouseLi
     }
 
     private void mostrarVentas() {
-        DefaultTableModel modeloTablaVentas = new DefaultTableModel() {
+        modeloTablaVentas = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -57,7 +68,7 @@ public class ControladorVenta implements ActionListener, WindowListener, MouseLi
         for (VentaVO vvo : vdao.consultarVenta()) {
             modeloTablaVentas.addRow(new Object[]{vvo.getIdFactura(),
                 vvo.getNumeroFactura(), vvo.getSerieFactura(),
-                vvo.getFechaFactura(), vvo.getTotalFactura(),
+                extras.cambiarFormatoAFechaVista(vvo.getFechaFactura()), vvo.getTotalFactura(),
                 vvo.getTipoPagoFactura(), vvo.getEstadoFactura(),
                 vvo.getIdClienteFK()});
         }
@@ -120,7 +131,7 @@ public class ControladorVenta implements ActionListener, WindowListener, MouseLi
     }
 
     private void mostrarDetalleVenta() {
-        DefaultTableModel modeloDetalle = new DefaultTableModel() {
+        modeloDetalle = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -160,14 +171,55 @@ public class ControladorVenta implements ActionListener, WindowListener, MouseLi
         this.vVentas.tblDetalleVentas.getColumnModel().getColumn(4).setMaxWidth(0);
         this.vVentas.tblDetalleVentas.getColumnModel().getColumn(4).setMinWidth(0);
     }
-    
-    private void actualizarEstadoVenta(){
+
+    private void actualizarEstadoVenta() {
+        if (!this.vVentas.txtIdVentas.getText().isEmpty()) {
+            this.vvo.setIdFactura(Integer.valueOf(this.vVentas.txtIdVentas.getText()));
+            this.vvo.setEstadoFactura(String.valueOf(this.vVentas.cmbEstadoVentas.getSelectedItem()));
+            if (vdao.actualizarVenta(vvo) == true) {
+                this.vVentas.jopMensajeVentas.showMessageDialog(null, "Estado de la venta actualizado con éxito.",
+                        "Información", JOptionPane.INFORMATION_MESSAGE);
+                mostrarVentas();
+                limpiarCampos();
+            } else {
+                this.vVentas.jopMensajeVentas.showMessageDialog(null, "Error, no se pudo actualizar el estado de la venta.",
+                        "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            this.vVentas.jopMensajeVentas.showMessageDialog(null, "No ha seleccionado una venta a actualizar.",
+                    "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    private void reporteVentas() {
+        vdao.reporteVenta();
+        vdao.jasperViewer.setDefaultCloseOperation(this.vVentas.DISPOSE_ON_CLOSE);
+        vdao.jasperViewer.setVisible(true);
+        banderaReporte = true;
+    }
+
+    private void limpiarCampos() {
+        this.vVentas.txtIdVentas.setText("");
+        this.vVentas.txtNumeroVentas.setText("");
+        this.vVentas.txtSerieVentas.setText("");
+        this.vVentas.txtFechaVentas.setText("");
+        this.vVentas.txtTotalVentas.setText("");
+        this.vVentas.txtNombreClienteVentas.setText("");
+        this.vVentas.txtApellidoClienteVentas.setText("");
+        this.vVentas.txtNitClienteVentas.setText("");
+        this.vVentas.cmbEstadoVentas.setSelectedIndex(0);
+    }
+
+    private void limpiarTablaDetalles() {
+        modeloDetalle = (DefaultTableModel) this.vVentas.tblDetalleVentas.getModel();
+        modeloDetalle.getDataVector().removeAllElements();
+        this.vVentas.tblDetalleVentas.updateUI();
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == this.vVentas.btnAceptarVentas) {
-            System.out.println("Actualizar");
+            actualizarEstadoVenta();
         }
     }
 
@@ -182,6 +234,13 @@ public class ControladorVenta implements ActionListener, WindowListener, MouseLi
 
     @Override
     public void windowClosed(WindowEvent we) {
+        if (!this.vVentas.txtIdVentas.getText().isEmpty()) {
+            limpiarCampos();
+            limpiarTablaDetalles();
+        }
+        if (banderaReporte) {
+            vdao.jasperViewer.setVisible(false);
+        }
     }
 
     @Override
@@ -214,10 +273,17 @@ public class ControladorVenta implements ActionListener, WindowListener, MouseLi
             }
         }
         if (me.getSource() == this.vVentas.lblReportesVentas) {
-            System.out.println("Generar reporte");
+            reporteVentas();
         }
         if (me.getSource() == this.vVentas.lblSalirVentas) {
             this.vVentas.dispose();
+            if (!this.vVentas.txtIdVentas.getText().isEmpty()) {
+                limpiarCampos();
+                limpiarTablaDetalles();
+            }
+            if (banderaReporte) {
+                vdao.jasperViewer.setVisible(false);
+            }
         }
     }
 

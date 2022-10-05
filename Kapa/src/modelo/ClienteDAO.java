@@ -1,10 +1,15 @@
 package modelo;
 
 import conexion.Conector;
+import extras.Extras;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class ClienteDAO implements ConsultarCliente{
+    
+    ErrorVO evo = new ErrorVO();
+    ErrorDAO edao = new ErrorDAO();
+    Extras extras = new Extras();
 
     @Override
     public boolean insertarCliente(ClienteVO cvo) {
@@ -44,7 +49,9 @@ public class ClienteDAO implements ConsultarCliente{
             }
             conector.desconectar();
         }catch(Exception e){
-            System.err.println("Error[Consultar-Cliente]: " + e.getMessage());
+            evo.setDescripcionError("[Consultar-Cliente]: " + e.getMessage());
+            evo.setFechaError(extras.devolverFechaActual());
+            edao.insertarError(evo);
             conector.desconectar();
         }
         return informacionCliente;

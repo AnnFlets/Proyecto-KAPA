@@ -1,11 +1,23 @@
 package modelo;
 
 import conexion.Conector;
+import extras.Extras;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class VentaDAO implements ConsultarVenta{
+    
+    ErrorVO evo = new ErrorVO();
+    ErrorDAO edao = new ErrorDAO();
+    Extras extras = new Extras();
 
+    public JasperViewer jasperViewer;
+    
     @Override
     public ArrayList<VentaVO> consultarVenta() {
         Conector conector = new Conector();
@@ -37,7 +49,9 @@ public class VentaDAO implements ConsultarVenta{
             }
             conector.desconectar();
         }catch(Exception e){
-            System.err.println("Error[Consultar-Venta]: " + e.getMessage());
+            evo.setDescripcionError("[Consultar-Venta]: " + e.getMessage());
+            evo.setFechaError(extras.devolverFechaActual());
+            edao.insertarError(evo);
             conector.desconectar();
         }
         return informacionVenta;
@@ -53,7 +67,9 @@ public class VentaDAO implements ConsultarVenta{
                     "WHERE f.id_factura = " + vvo.getIdFactura();
             conector.consultasMultiples(query);
         }catch(Exception e){
-            System.err.println("Error[Actualizar-Venta]: " + e.getMessage());
+            evo.setDescripcionError("[Actualizar-Venta]: " + e.getMessage());
+            evo.setFechaError(extras.devolverFechaActual());
+            edao.insertarError(evo);
             conector.desconectar();
             return false;
         }
@@ -63,6 +79,20 @@ public class VentaDAO implements ConsultarVenta{
 
     @Override
     public void reporteVenta() {
-        System.out.println("Generar reporte");
+        Conector conector = new Conector();
+        try{
+            conector.conectar();
+            JasperReport reporteVenta;
+            String ruta = "/reportes/ReporteVentas.jasper";
+            reporteVenta = (JasperReport) JRLoader.loadObject(getClass().getResource(ruta));
+            JasperPrint jasperPrint = JasperFillManager.fillReport(reporteVenta, null, conector.connection);
+            JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
+            this.jasperViewer = jasperViewer;
+        }catch(Exception e){
+            evo.setDescripcionError("[Reporte-Ventas]: " + e.getMessage());
+            evo.setFechaError(extras.devolverFechaActual());
+            edao.insertarError(evo);
+            conector.desconectar();
+        }
     }
 }

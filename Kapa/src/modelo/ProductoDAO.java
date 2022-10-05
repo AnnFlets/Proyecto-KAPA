@@ -1,10 +1,15 @@
 package modelo;
 
 import conexion.Conector;
+import extras.Extras;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class ProductoDAO implements ConsultarProducto{
+public class ProductoDAO implements ConsultarProducto {
+
+    ErrorVO evo = new ErrorVO();
+    ErrorDAO edao = new ErrorDAO();
+    Extras extras = new Extras();
 
     @Override
     public boolean insertarProducto(ProductoVO pvo) {
@@ -15,7 +20,7 @@ public class ProductoDAO implements ConsultarProducto{
     public ArrayList<ProductoVO> consultarProducto() {
         Conector conector = new Conector();
         ArrayList<ProductoVO> informacionProducto = new ArrayList<>();
-        try{
+        try {
             conector.conectar();
             String query = "SELECT "
                     + "p.id_producto, "
@@ -30,7 +35,7 @@ public class ProductoDAO implements ConsultarProducto{
                     + "p.id_proveedor_fk "
                     + "FROM producto p";
             ResultSet resultSet = conector.consultaDatos(query);
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 ProductoVO pvo = new ProductoVO();
                 pvo.setIdProducto(resultSet.getInt(1));
                 pvo.setDescripcionProducto(resultSet.getString(2));
@@ -45,8 +50,10 @@ public class ProductoDAO implements ConsultarProducto{
                 informacionProducto.add(pvo);
             }
             conector.desconectar();
-        }catch(Exception e){
-            System.err.println("Error[Consultar-Producto]: " + e.getMessage());
+        } catch (Exception e) {
+            evo.setDescripcionError("[Consultar-Producto]: " + e.getMessage());
+            evo.setFechaError(extras.devolverFechaActual());
+            edao.insertarError(evo);
             conector.desconectar();
         }
         return informacionProducto;
@@ -64,6 +71,6 @@ public class ProductoDAO implements ConsultarProducto{
 
     @Override
     public void reporteProducto() {
-         
+
     }
 }

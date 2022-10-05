@@ -27,6 +27,10 @@ public class FrmVentas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jopMensajeVentas = new javax.swing.JOptionPane();
+        jPanel2 = new javax.swing.JPanel();
+        lblSalirVentas = new javax.swing.JLabel();
+        lblReportesVentas = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         txtNumeroVentas = new javax.swing.JTextField();
         cmbEstadoVentas = new javax.swing.JComboBox<>();
@@ -48,9 +52,7 @@ public class FrmVentas extends javax.swing.JFrame {
         txtNitClienteVentas = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        lblSalirVentas = new javax.swing.JLabel();
-        lblReportesVentas = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblVentas = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
@@ -60,10 +62,20 @@ public class FrmVentas extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Administrador ventas");
+        setTitle("Administrador de Ventas");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblSalirVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salir.png"))); // NOI18N
+        jPanel2.add(lblSalirVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
+
+        lblReportesVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reporte.png"))); // NOI18N
+        jPanel2.add(lblReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 70, 580));
+
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNumeroVentas.setEditable(false);
@@ -85,25 +97,30 @@ public class FrmVentas extends javax.swing.JFrame {
         jPanel1.add(txtIdVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, 190, 30));
 
         btnAceptarVentas.setBackground(new java.awt.Color(49, 99, 123));
-        btnAceptarVentas.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        btnAceptarVentas.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         btnAceptarVentas.setForeground(new java.awt.Color(255, 255, 255));
-        btnAceptarVentas.setText("ACEPTAR");
-        jPanel1.add(btnAceptarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 160, 140, 60));
+        btnAceptarVentas.setText("ACTUALIZAR");
+        btnAceptarVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarVentasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAceptarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 160, 130, 60));
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 55)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(67, 67, 67));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("DATOS DE VENTA");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 470, 60));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Número");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Serie");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
         txtSerieVentas.setEditable(false);
         txtSerieVentas.setBackground(new java.awt.Color(204, 204, 204));
@@ -112,7 +129,7 @@ public class FrmVentas extends javax.swing.JFrame {
         jPanel1.add(txtSerieVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 190, 30));
 
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("ID");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 20, -1, -1));
 
@@ -129,14 +146,14 @@ public class FrmVentas extends javax.swing.JFrame {
         jPanel1.add(txtTotalVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, 190, 30));
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Total");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 110, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Nombre del cliente");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
 
         txtNombreClienteVentas.setEditable(false);
         txtNombreClienteVentas.setBackground(new java.awt.Color(204, 204, 204));
@@ -145,9 +162,9 @@ public class FrmVentas extends javax.swing.JFrame {
         jPanel1.add(txtNombreClienteVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 190, 30));
 
         jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Apellido del cliente");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, -1, -1));
 
         txtApellidoClienteVentas.setEditable(false);
         txtApellidoClienteVentas.setBackground(new java.awt.Color(204, 204, 204));
@@ -156,9 +173,9 @@ public class FrmVentas extends javax.swing.JFrame {
         jPanel1.add(txtApellidoClienteVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 190, 30));
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Estado");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 190, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, -1, -1));
 
         txtNitClienteVentas.setEditable(false);
         txtNitClienteVentas.setBackground(new java.awt.Color(204, 204, 204));
@@ -167,27 +184,19 @@ public class FrmVentas extends javax.swing.JFrame {
         jPanel1.add(txtNitClienteVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 190, 30));
 
         jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("NIT del cliente");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Fecha");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoLogin.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 270));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 270));
-
-        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblSalirVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salir.png"))); // NOI18N
-        jPanel2.add(lblSalirVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
-
-        lblReportesVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reporte.png"))); // NOI18N
-        jPanel2.add(lblReportesVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 70, 580));
 
         tblVentas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         tblVentas.setModel(new javax.swing.table.DefaultTableModel(
@@ -200,7 +209,7 @@ public class FrmVentas extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblVentas);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 960, 250));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 940, 250));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -218,19 +227,24 @@ public class FrmVentas extends javax.swing.JFrame {
 
             }
         ));
+        tblDetalleVentas.setEnabled(false);
         jScrollPane2.setViewportView(tblDetalleVentas);
 
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 960, 190));
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 940, 190));
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(73, 73, 73));
         jLabel3.setText("De doble clic sobre la venta para seleccionarla.");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 1030, 580));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 1000, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAceptarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarVentasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAceptarVentasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,6 +284,7 @@ public class FrmVentas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAceptarVentas;
     public javax.swing.JComboBox<String> cmbEstadoVentas;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -287,6 +302,7 @@ public class FrmVentas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JOptionPane jopMensajeVentas;
     public javax.swing.JLabel lblReportesVentas;
     public javax.swing.JLabel lblSalirVentas;
     public javax.swing.JTable tblDetalleVentas;
