@@ -1,5 +1,7 @@
 package modelo;
 
+import java.sql.Blob;
+
 public class ProductoVO {
     /**
      * Atributos de la clase
@@ -12,19 +14,12 @@ public class ProductoVO {
     private double precioCompraProducto;
     private double precioVentaProducto;
     private int existenciaProducto;
-    private String imgProducto;
+    private Blob imgProducto;
     private int idProveedor;
 
-    /**
-     * Constructor vacío
-     */
     public ProductoVO() {
     }
 
-    /**
-     * Getters & Setters
-     * @return -> Retorna el valor almacenado en las variables
-     */
     public int getIdProducto() {
         return idProducto;
     }
@@ -89,11 +84,11 @@ public class ProductoVO {
         this.existenciaProducto = existenciaProducto;
     }
 
-    public String getImgProducto() {
+    public Blob getImgProducto() {
         return imgProducto;
     }
 
-    public void setImgProducto(String imgProducto) {
+    public void setImgProducto(Blob imgProducto) {
         this.imgProducto = imgProducto;
     }
 
@@ -104,4 +99,12 @@ public class ProductoVO {
     public void setIdProveedor(int idProveedor) {
         this.idProveedor = idProveedor;
     }
+
+    /**
+     * Constructor vacío
+     */
+    
+  /***********************/
+    
+    
 }
