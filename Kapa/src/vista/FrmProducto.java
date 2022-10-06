@@ -201,8 +201,13 @@ public class FrmProducto extends javax.swing.JFrame {
             getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 60, 180, 90));
 
             txt_imagen.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-            txt_imagen.setText("Imagen del roducto");
+            txt_imagen.setText("Seleccione imagen");
             txt_imagen.setName("txt_descripcion"); // NOI18N
+            txt_imagen.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    txt_imagenActionPerformed(evt);
+                }
+            });
             getContentPane().add(txt_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 210, 30));
 
             jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -263,6 +268,10 @@ public class FrmProducto extends javax.swing.JFrame {
 
             pack();
         }// </editor-fold>//GEN-END:initComponents
+
+    private void txt_imagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_imagenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_imagenActionPerformed
 
     /**
      * @param args the command line arguments
