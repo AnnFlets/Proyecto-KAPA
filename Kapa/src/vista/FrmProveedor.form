@@ -74,7 +74,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtIdProveedor">
+    <Component class="javax.swing.JTextField" name="txt_idproveedor">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -86,7 +86,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="33" red="33" type="rgb"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="txtIdProveedor" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="txt_idproveedor" noResource="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -140,7 +140,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNombreProveedor">
+    <Component class="javax.swing.JTextField" name="txt_nombreproveedor">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="14" style="0"/>
@@ -148,7 +148,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="33" red="33" type="rgb"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="txtNombreProveedor" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="txt_nombreproveedor" noResource="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -220,7 +220,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtTelefonoProveedor">
+    <Component class="javax.swing.JTextField" name="txt_telefonoproveedor">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="14" style="0"/>
@@ -239,7 +239,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="btnSalir">
+    <Component class="javax.swing.JButton" name="btn_salir">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/img/ic_java_4salir.png"/>
@@ -255,7 +255,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCrear">
+    <Component class="javax.swing.JButton" name="btn_crear">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/img/ic_java_1crear.png"/>
@@ -271,7 +271,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="btnActualizar">
+    <Component class="javax.swing.JButton" name="btn_actualizar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/img/ic_java_2actulizar.png"/>
@@ -287,7 +287,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="btnEliminar">
+    <Component class="javax.swing.JButton" name="btn_eliminar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/img/ic_java_3eliminar.png"/>
@@ -303,7 +303,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="btnReporte">
+    <Component class="javax.swing.JButton" name="btn_reporte">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/img/ic_java_5reporte.png"/>

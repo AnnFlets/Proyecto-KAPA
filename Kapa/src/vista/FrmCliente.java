@@ -29,39 +29,39 @@ public class FrmCliente extends javax.swing.JFrame {
         jop_mensajes = new javax.swing.JOptionPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txt_idcliente = new javax.swing.JTextField();
+        txtIdCliente = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
-        txt_usuario = new javax.swing.JTextField();
+        txtUsuarioCliente = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        txt_contrasenia = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
-        txt_nombre_cliente = new javax.swing.JTextField();
+        txtNombreCliente = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-        txt_apellido_cliente = new javax.swing.JTextField();
+        txtApellidoCliente = new javax.swing.JTextField();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        txt_precioucompra = new javax.swing.JTextField();
+        txtNitCliente = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
+        txtContraseniaCliente = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
-        txt_telefono_cliente = new javax.swing.JTextField();
+        txtTelefonoCliente = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txt_direccion_cliente = new javax.swing.JTextField();
+        txtDireccionCliente = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        txt_correoe_cliente = new javax.swing.JTextField();
+        txtCorreoCliente = new javax.swing.JTextField();
         jSeparator12 = new javax.swing.JSeparator();
-        btn_salir = new javax.swing.JButton();
-        btn_crear = new javax.swing.JButton();
-        btn_actualizar = new javax.swing.JButton();
-        btn_eliminar = new javax.swing.JButton();
-        btn_reporte = new javax.swing.JButton();
+        btnSalirCliente = new javax.swing.JButton();
+        btnCrearCliente = new javax.swing.JButton();
+        btnActualizarCliente = new javax.swing.JButton();
+        btnEliminarCliente = new javax.swing.JButton();
+        btnReporteCliente = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblClientes = new javax.swing.JTable();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
 
@@ -84,10 +84,10 @@ public class FrmCliente extends javax.swing.JFrame {
         jLabel2.setText("ID");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 44, 40, -1));
 
-        txt_idcliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txt_idcliente.setText("ID");
-        txt_idcliente.setName("txt_idcliente"); // NOI18N
-        getContentPane().add(txt_idcliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 70, 40, -1));
+        txtIdCliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtIdCliente.setText("ID");
+        txtIdCliente.setName("txtIdCliente"); // NOI18N
+        getContentPane().add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 70, 40, -1));
 
         jSeparator1.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -103,10 +103,10 @@ public class FrmCliente extends javax.swing.JFrame {
         jLabel3.setText("Usuario");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 44, 289, -1));
 
-        txt_usuario.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txt_usuario.setText("Usuario");
-        txt_usuario.setName("txt_usuario"); // NOI18N
-        getContentPane().add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 69, 289, -1));
+        txtUsuarioCliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtUsuarioCliente.setText("Usuario");
+        txtUsuarioCliente.setName("txtUsuarioCliente"); // NOI18N
+        getContentPane().add(txtUsuarioCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 69, 289, -1));
 
         jSeparator3.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -117,11 +117,6 @@ public class FrmCliente extends javax.swing.JFrame {
         jLabel4.setText("Contraseña");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 41, 150, -1));
 
-        txt_contrasenia.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txt_contrasenia.setText("Constraseña");
-        txt_contrasenia.setName("txt_descripcion"); // NOI18N
-        getContentPane().add(txt_contrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 66, 150, -1));
-
         jSeparator4.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 29, 0, 62));
@@ -131,10 +126,10 @@ public class FrmCliente extends javax.swing.JFrame {
         jLabel5.setText("Nombre Cliente");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 41, 150, -1));
 
-        txt_nombre_cliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txt_nombre_cliente.setText("Nombre Cliente");
-        txt_nombre_cliente.setName("txt_descripcion"); // NOI18N
-        getContentPane().add(txt_nombre_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 66, 150, -1));
+        txtNombreCliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtNombreCliente.setText("Nombre Cliente");
+        txtNombreCliente.setName("txt_descripcion"); // NOI18N
+        getContentPane().add(txtNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 66, 150, -1));
 
         jSeparator5.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -149,10 +144,10 @@ public class FrmCliente extends javax.swing.JFrame {
         jLabel6.setText("Apellido Cliente");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(749, 41, 150, -1));
 
-        txt_apellido_cliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txt_apellido_cliente.setText("Apellido Cliente");
-        txt_apellido_cliente.setName("txt_descripcion"); // NOI18N
-        getContentPane().add(txt_apellido_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(749, 66, 162, -1));
+        txtApellidoCliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtApellidoCliente.setText("Apellido Cliente");
+        txtApellidoCliente.setName("txt_descripcion"); // NOI18N
+        getContentPane().add(txtApellidoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(749, 66, 162, -1));
 
         jSeparator7.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -163,14 +158,15 @@ public class FrmCliente extends javax.swing.JFrame {
         jLabel7.setText("Nit Cliente");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(925, 40, 134, -1));
 
-        txt_precioucompra.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txt_precioucompra.setText("Nit Cliente");
-        txt_precioucompra.setName("txt_descripcion"); // NOI18N
-        getContentPane().add(txt_precioucompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(925, 65, 130, -1));
+        txtNitCliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtNitCliente.setText("Nit Cliente");
+        txtNitCliente.setName("txt_descripcion"); // NOI18N
+        getContentPane().add(txtNitCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(925, 65, 130, -1));
 
         jSeparator8.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator8.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         getContentPane().add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 1010, 20));
+        getContentPane().add(txtContraseniaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 69, 130, 30));
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -178,67 +174,64 @@ public class FrmCliente extends javax.swing.JFrame {
         jLabel8.setText("Teléfono Cliente");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 170, -1));
 
-        txt_telefono_cliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txt_telefono_cliente.setText("Telefono");
-        txt_telefono_cliente.setName("txt_descripcion"); // NOI18N
-        getContentPane().add(txt_telefono_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 170, -1));
+        txtTelefonoCliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtTelefonoCliente.setText("Telefono");
+        txtTelefonoCliente.setName("txt_descripcion"); // NOI18N
+        getContentPane().add(txtTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 170, -1));
 
         jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Dirección Cliente");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 360, -1));
 
-        txt_direccion_cliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txt_direccion_cliente.setText("Dirección");
-        txt_direccion_cliente.setName("txt_descripcion"); // NOI18N
-        getContentPane().add(txt_direccion_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 360, -1));
+        txtDireccionCliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtDireccionCliente.setText("Dirección");
+        txtDireccionCliente.setName("txt_descripcion"); // NOI18N
+        getContentPane().add(txtDireccionCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 360, -1));
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Correo Electrónico Cliente");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(642, 110, 420, -1));
 
-        txt_correoe_cliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txt_correoe_cliente.setText("correo");
-        txt_correoe_cliente.setName("txt_descripcion"); // NOI18N
-        getContentPane().add(txt_correoe_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(642, 130, 420, -1));
+        txtCorreoCliente.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txtCorreoCliente.setText("correo");
+        txtCorreoCliente.setName("txt_descripcion"); // NOI18N
+        getContentPane().add(txtCorreoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(642, 130, 420, -1));
 
         jSeparator12.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator12.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 10, 60));
 
-        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_4salir.png"))); // NOI18N
-        btn_salir.setToolTipText("Regresar al menú principal");
-        getContentPane().add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 40, 30));
+        btnSalirCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_4salir.png"))); // NOI18N
+        btnSalirCliente.setToolTipText("Regresar al menú principal");
+        getContentPane().add(btnSalirCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 40, 30));
 
-        btn_crear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_1crear.png"))); // NOI18N
-        btn_crear.setToolTipText("Crear (debe tener los campos llenos)");
-        getContentPane().add(btn_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 40, 30));
+        btnCrearCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_1crear.png"))); // NOI18N
+        btnCrearCliente.setToolTipText("Crear (debe tener los campos llenos)");
+        getContentPane().add(btnCrearCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 40, 30));
 
-        btn_actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_2actulizar.png"))); // NOI18N
-        btn_actualizar.setToolTipText("Actualizar (debe tener algún registro seleccionado)");
-        getContentPane().add(btn_actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 40, 30));
+        btnActualizarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_2actulizar.png"))); // NOI18N
+        btnActualizarCliente.setToolTipText("Actualizar (debe tener algún registro seleccionado)");
+        getContentPane().add(btnActualizarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 40, 30));
 
-        btn_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_3eliminar.png"))); // NOI18N
-        btn_eliminar.setToolTipText("Eliminar (debe tener algún registro seleccionado)");
-        getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 40, 30));
+        btnEliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_3eliminar.png"))); // NOI18N
+        btnEliminarCliente.setToolTipText("Eliminar (debe tener algún registro seleccionado)");
+        getContentPane().add(btnEliminarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 40, 30));
 
-        btn_reporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_5reporte.png"))); // NOI18N
-        btn_reporte.setToolTipText("Crear un reporte (Con los registros mostrados)");
-        getContentPane().add(btn_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 40, 30));
+        btnReporteCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_5reporte.png"))); // NOI18N
+        btnReporteCliente.setToolTipText("Crear un reporte (Con los registros mostrados)");
+        getContentPane().add(btnReporteCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 40, 30));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblClientes);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 990, 340));
 
@@ -294,11 +287,11 @@ public class FrmCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btn_actualizar;
-    public javax.swing.JButton btn_crear;
-    public javax.swing.JButton btn_eliminar;
-    public javax.swing.JButton btn_reporte;
-    public javax.swing.JButton btn_salir;
+    public javax.swing.JButton btnActualizarCliente;
+    public javax.swing.JButton btnCrearCliente;
+    public javax.swing.JButton btnEliminarCliente;
+    public javax.swing.JButton btnReporteCliente;
+    public javax.swing.JButton btnSalirCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -321,16 +314,16 @@ public class FrmCliente extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JTable jTable1;
     private javax.swing.JOptionPane jop_mensajes;
-    public javax.swing.JTextField txt_apellido_cliente;
-    public javax.swing.JTextField txt_contrasenia;
-    public javax.swing.JTextField txt_correoe_cliente;
-    public javax.swing.JTextField txt_direccion_cliente;
-    public javax.swing.JTextField txt_idcliente;
-    public javax.swing.JTextField txt_nombre_cliente;
-    public javax.swing.JTextField txt_precioucompra;
-    public javax.swing.JTextField txt_telefono_cliente;
-    public javax.swing.JTextField txt_usuario;
+    public javax.swing.JTable tblClientes;
+    public javax.swing.JTextField txtApellidoCliente;
+    public javax.swing.JPasswordField txtContraseniaCliente;
+    public javax.swing.JTextField txtCorreoCliente;
+    public javax.swing.JTextField txtDireccionCliente;
+    public javax.swing.JTextField txtIdCliente;
+    public javax.swing.JTextField txtNitCliente;
+    public javax.swing.JTextField txtNombreCliente;
+    public javax.swing.JTextField txtTelefonoCliente;
+    public javax.swing.JTextField txtUsuarioCliente;
     // End of variables declaration//GEN-END:variables
 }

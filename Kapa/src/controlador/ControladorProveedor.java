@@ -30,11 +30,11 @@ public class ControladorProveedor implements ActionListener, WindowListener, Mou
     public ControladorProveedor(FrmProveedor vProveedor) {
         this.vProveedor = vProveedor;
         this.vProveedor.addWindowListener(this);
-        this.vProveedor.btnCrear.addActionListener(this);
-        this.vProveedor.btnActualizar.addActionListener(this);
-        this.vProveedor.btnEliminar.addActionListener(this);
-        this.vProveedor.btnReporte.addActionListener(this);
-        this.vProveedor.btnSalir.addActionListener(this);
+        this.vProveedor.btn_crear.addActionListener(this);
+        this.vProveedor.btn_actualizar.addActionListener(this);
+        this.vProveedor.btn_eliminar.addActionListener(this);
+        this.vProveedor.btn_reporte.addActionListener(this);
+        this.vProveedor.btn_salir.addActionListener(this);
         this.vProveedor.tblProveedores.addMouseListener(this);
     }
 
@@ -66,13 +66,13 @@ public class ControladorProveedor implements ActionListener, WindowListener, Mou
         while (numero < 3) {
             switch (numero) {
                 case 0:
-                    this.vProveedor.txtIdProveedor.setText(String.valueOf(this.vProveedor.tblProveedores.getValueAt(this.vProveedor.tblProveedores.getSelectedRow(), numero)));
+                    this.vProveedor.txt_idproveedor.setText(String.valueOf(this.vProveedor.tblProveedores.getValueAt(this.vProveedor.tblProveedores.getSelectedRow(), numero)));
                     break;
                 case 1:
-                    this.vProveedor.txtNombreProveedor.setText(String.valueOf(this.vProveedor.tblProveedores.getValueAt(this.vProveedor.tblProveedores.getSelectedRow(), numero)));
+                    this.vProveedor.txt_nombreproveedor.setText(String.valueOf(this.vProveedor.tblProveedores.getValueAt(this.vProveedor.tblProveedores.getSelectedRow(), numero)));
                     break;
                 case 2:
-                    this.vProveedor.txtTelefonoProveedor.setText(String.valueOf(this.vProveedor.tblProveedores.getValueAt(this.vProveedor.tblProveedores.getSelectedRow(), numero)));
+                    this.vProveedor.txt_telefonoproveedor.setText(String.valueOf(this.vProveedor.tblProveedores.getValueAt(this.vProveedor.tblProveedores.getSelectedRow(), numero)));
                     break;
             }
             numero++;
@@ -84,16 +84,16 @@ public class ControladorProveedor implements ActionListener, WindowListener, Mou
         int contador = 0;
         for (ProveedorVO proveedor : prdao.consultarProveedor()) {
             if (opcion == 1) {
-                if (proveedor.getNombreProveedor().equals(this.vProveedor.txtNombreProveedor.getText())
-                        || proveedor.getTelefonoProveedor().equals(this.vProveedor.txtTelefonoProveedor.getText())) {
+                if (proveedor.getNombreProveedor().equals(this.vProveedor.txt_nombreproveedor.getText())
+                        || proveedor.getTelefonoProveedor().equals(this.vProveedor.txt_telefonoproveedor.getText())) {
                     banderaProveedor = false;
                     this.vProveedor.jopMensajeProveedor.showMessageDialog(null, "Ya existe un proveedor con el mismo nombre y/o teléfono.",
                             "Advertencia", JOptionPane.WARNING_MESSAGE);
                     break;
                 }
             } else {
-                if (proveedor.getNombreProveedor().equals(this.vProveedor.txtNombreProveedor.getText())
-                        || proveedor.getTelefonoProveedor().equals(this.vProveedor.txtTelefonoProveedor.getText())) {
+                if (proveedor.getNombreProveedor().equals(this.vProveedor.txt_nombreproveedor.getText())
+                        || proveedor.getTelefonoProveedor().equals(this.vProveedor.txt_telefonoproveedor.getText())) {
                     System.out.println(this.vProveedor.tblProveedores.getSelectedRow());
                     System.out.println(contador);
                     if (contador != this.vProveedor.tblProveedores.getSelectedRow()) {
@@ -111,11 +111,11 @@ public class ControladorProveedor implements ActionListener, WindowListener, Mou
     }
 
     private void registrarProveedor() {
-        if (!this.vProveedor.txtNombreProveedor.getText().isEmpty()
-                && !this.vProveedor.txtTelefonoProveedor.getText().isEmpty()) {
+        if (!this.vProveedor.txt_nombreproveedor.getText().isEmpty()
+                && !this.vProveedor.txt_telefonoproveedor.getText().isEmpty()) {
             if (verificarProveedorDuplicado(1)) {
-                this.prvo.setNombreProveedor(this.vProveedor.txtNombreProveedor.getText());
-                this.prvo.setTelefonoProveedor(this.vProveedor.txtTelefonoProveedor.getText());
+                this.prvo.setNombreProveedor(this.vProveedor.txt_nombreproveedor.getText());
+                this.prvo.setTelefonoProveedor(this.vProveedor.txt_telefonoproveedor.getText());
                 if (prdao.insertarProveedor(prvo) == true) {
                     limpiarCampos();
                     this.vProveedor.jopMensajeProveedor.showMessageDialog(null, "Proveedor registrado correctamente.",
@@ -132,13 +132,13 @@ public class ControladorProveedor implements ActionListener, WindowListener, Mou
     }
 
     private void modificarProveedor() {
-        if (!this.vProveedor.txtIdProveedor.getText().isEmpty()
-                && !this.vProveedor.txtNombreProveedor.getText().isEmpty()
-                && !this.vProveedor.txtTelefonoProveedor.getText().isEmpty()) {
+        if (!this.vProveedor.txt_idproveedor.getText().isEmpty()
+                && !this.vProveedor.txt_nombreproveedor.getText().isEmpty()
+                && !this.vProveedor.txt_telefonoproveedor.getText().isEmpty()) {
             if (verificarProveedorDuplicado(2)) {
-                this.prvo.setIdProveedor(Integer.parseInt(this.vProveedor.txtIdProveedor.getText()));
-                this.prvo.setNombreProveedor(this.vProveedor.txtNombreProveedor.getText());
-                this.prvo.setTelefonoProveedor(this.vProveedor.txtTelefonoProveedor.getText());
+                this.prvo.setIdProveedor(Integer.parseInt(this.vProveedor.txt_idproveedor.getText()));
+                this.prvo.setNombreProveedor(this.vProveedor.txt_nombreproveedor.getText());
+                this.prvo.setTelefonoProveedor(this.vProveedor.txt_telefonoproveedor.getText());
                 if (prdao.actualizarProveedor(prvo) == true) {
                     limpiarCampos();
                     this.vProveedor.jopMensajeProveedor.showMessageDialog(null, "Proveedor actualizado correctamente.",
@@ -155,8 +155,8 @@ public class ControladorProveedor implements ActionListener, WindowListener, Mou
     }
 
     private void eliminarProveedor() {
-        if (!this.vProveedor.txtIdProveedor.getText().isEmpty()) {
-            this.prvo.setIdProveedor(Integer.parseInt(this.vProveedor.txtIdProveedor.getText()));
+        if (!this.vProveedor.txt_idproveedor.getText().isEmpty()) {
+            this.prvo.setIdProveedor(Integer.parseInt(this.vProveedor.txt_idproveedor.getText()));
             if (prdao.eliminarProveedor(prvo) == true) {
                 limpiarCampos();
                 this.vProveedor.jopMensajeProveedor.showMessageDialog(null, "Proveedor eliminado correctamente.",
@@ -179,28 +179,28 @@ public class ControladorProveedor implements ActionListener, WindowListener, Mou
     }
 
     private void limpiarCampos() {
-        this.vProveedor.txtIdProveedor.setText("");
-        this.vProveedor.txtNombreProveedor.setText("");
-        this.vProveedor.txtTelefonoProveedor.setText("");
+        this.vProveedor.txt_idproveedor.setText("");
+        this.vProveedor.txt_nombreproveedor.setText("");
+        this.vProveedor.txt_telefonoproveedor.setText("");
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if (ae.getSource() == this.vProveedor.btnCrear) {
+        if (ae.getSource() == this.vProveedor.btn_crear) {
             registrarProveedor();
         }
-        if (ae.getSource() == this.vProveedor.btnActualizar) {
+        if (ae.getSource() == this.vProveedor.btn_actualizar) {
             modificarProveedor();
         }
-        if (ae.getSource() == this.vProveedor.btnEliminar) {
+        if (ae.getSource() == this.vProveedor.btn_eliminar) {
             eliminarProveedor();
         }
-        if (ae.getSource() == this.vProveedor.btnReporte) {
+        if (ae.getSource() == this.vProveedor.btn_reporte) {
             reporteProveedores();
         }
-        if (ae.getSource() == this.vProveedor.btnSalir) {
+        if (ae.getSource() == this.vProveedor.btn_salir) {
             this.vProveedor.dispose();
-            if (!this.vProveedor.txtIdProveedor.getText().isEmpty()) {
+            if (!this.vProveedor.txt_idproveedor.getText().isEmpty()) {
                 limpiarCampos();
             }
             if (banderaReporte) {
@@ -220,7 +220,7 @@ public class ControladorProveedor implements ActionListener, WindowListener, Mou
 
     @Override
     public void windowClosed(WindowEvent we) {
-        if (!this.vProveedor.txtIdProveedor.getText().isEmpty()) {
+        if (!this.vProveedor.txt_idproveedor.getText().isEmpty()) {
             limpiarCampos();
         }
         if (banderaReporte) {

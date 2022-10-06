@@ -10,14 +10,14 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
-public class ClienteDAO implements ConsultarCliente{
-    
+public class ClienteDAO implements ConsultarCliente {
+
     ErrorVO evo = new ErrorVO();
     ErrorDAO edao = new ErrorDAO();
     Extras extras = new Extras();
 
     public JasperViewer jasperViewer;
-    
+
     @Override
     public boolean insertarCliente(ClienteVO cvo) {
         Conector conector = new Conector();
@@ -55,7 +55,7 @@ public class ClienteDAO implements ConsultarCliente{
     public ArrayList<ClienteVO> consultarCliente() {
         Conector conector = new Conector();
         ArrayList<ClienteVO> informacionCliente = new ArrayList<>();
-        try{
+        try {
             conector.conectar();
             String query = "SELECT "
                     + "c.id_cliente, "
@@ -69,7 +69,7 @@ public class ClienteDAO implements ConsultarCliente{
                     + "c.correo_cliente "
                     + "FROM cliente c";
             ResultSet resultSet = conector.consultaDatos(query);
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 ClienteVO cvo = new ClienteVO();
                 cvo.setIdCliente(resultSet.getInt(1));
                 cvo.setUsuarioCliente(resultSet.getString(2));
@@ -83,7 +83,7 @@ public class ClienteDAO implements ConsultarCliente{
                 informacionCliente.add(cvo);
             }
             conector.desconectar();
-        }catch(Exception e){
+        } catch (Exception e) {
             evo.setDescripcionError("[Consultar-Cliente]: " + e.getMessage());
             evo.setFechaError(extras.devolverFechaActual());
             edao.insertarError(evo);
@@ -100,12 +100,12 @@ public class ClienteDAO implements ConsultarCliente{
             String query = "UPDATE dbkapa.cliente c "
                     + "SET c.usuario_cliente = '" + cvo.getUsuarioCliente() + "', "
                     + "c.contrasenia_cliente = '" + cvo.getContraseniaCliente() + "', "
-                    + "c.nombre_cliente = '" + cvo.getNombreCliente()+ "', "
-                    + "c.apellido_cliente = '" + cvo.getApellidoCliente()+ "', "
-                    + "c.nit_cliente = '" + cvo.getNitCliente()+ "', "
-                    + "c.direccion_cliente = '" + cvo.getDireccionCliente()+ "', "
-                    + "c.telefono_cliente = '" + cvo.getTelefonoCliente()+ "', "
-                    + "c.correo_cliente = '" + cvo.getCorreoCliente()+ "' "
+                    + "c.nombre_cliente = '" + cvo.getNombreCliente() + "', "
+                    + "c.apellido_cliente = '" + cvo.getApellidoCliente() + "', "
+                    + "c.nit_cliente = '" + cvo.getNitCliente() + "', "
+                    + "c.direccion_cliente = '" + cvo.getDireccionCliente() + "', "
+                    + "c.telefono_cliente = '" + cvo.getTelefonoCliente() + "', "
+                    + "c.correo_cliente = '" + cvo.getCorreoCliente() + "' "
                     + "WHERE c.id_cliente = " + cvo.getIdCliente();
             conector.consultasMultiples(query);
         } catch (Exception e) {
@@ -121,13 +121,26 @@ public class ClienteDAO implements ConsultarCliente{
 
     @Override
     public boolean eliminarCliente(ClienteVO cvo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Conector conector = new Conector();
+        try {
+            conector.conectar();
+            String query = "DELETE FROM dbkapa.cliente WHERE id_cliente = " + cvo.getIdCliente();
+            conector.consultasMultiples(query);
+        } catch (Exception e) {
+            evo.setDescripcionError("[Eliminar-Cliente]: " + e.getMessage());
+            evo.setFechaError(extras.devolverFechaActual());
+            edao.insertarError(evo);
+            conector.desconectar();
+            return false;
+        }
+        conector.desconectar();
+        return true;
     }
 
     @Override
     public void reporteCliente() {
         Conector conector = new Conector();
-        try{
+        try {
             conector.conectar();
             JasperReport reporteCliente;
             String ruta = "/reportes/ReporteClientes.jasper";
@@ -135,7 +148,7 @@ public class ClienteDAO implements ConsultarCliente{
             JasperPrint jasperPrint = JasperFillManager.fillReport(reporteCliente, null, conector.connection);
             JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
             this.jasperViewer = jasperViewer;
-        }catch(Exception e){
+        } catch (Exception e) {
             evo.setDescripcionError("[Reporte-Clientes]: " + e.getMessage());
             evo.setFechaError(extras.devolverFechaActual());
             edao.insertarError(evo);

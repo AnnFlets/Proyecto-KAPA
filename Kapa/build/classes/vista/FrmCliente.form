@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.JOptionPane" name="jop_mensajes">
     </Component>
@@ -71,13 +71,13 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_idcliente">
+    <Component class="javax.swing.JTextField" name="txtIdCliente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="ID"/>
-        <Property name="name" type="java.lang.String" value="txt_idcliente" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="txtIdCliente" noResource="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -131,13 +131,13 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_usuario">
+    <Component class="javax.swing.JTextField" name="txtUsuarioCliente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Usuario"/>
-        <Property name="name" type="java.lang.String" value="txt_usuario" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="txtUsuarioCliente" noResource="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -175,23 +175,6 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_contrasenia">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Century Gothic" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Constrase&#xf1;a"/>
-        <Property name="name" type="java.lang.String" value="txt_descripcion" noResource="true"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="419" y="66" width="150" height="-1"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator4">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -219,7 +202,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_nombre_cliente">
+    <Component class="javax.swing.JTextField" name="txtNombreCliente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="14" style="0"/>
@@ -276,7 +259,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_apellido_cliente">
+    <Component class="javax.swing.JTextField" name="txtApellidoCliente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="14" style="0"/>
@@ -320,7 +303,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_precioucompra">
+    <Component class="javax.swing.JTextField" name="txtNitCliente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="14" style="0"/>
@@ -352,6 +335,16 @@
         </Constraint>
       </Constraints>
     </Component>
+    <Component class="javax.swing.JPasswordField" name="txtContraseniaCliente">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="430" y="69" width="130" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -369,7 +362,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_telefono_cliente">
+    <Component class="javax.swing.JTextField" name="txtTelefonoCliente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="14" style="0"/>
@@ -400,7 +393,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_direccion_cliente">
+    <Component class="javax.swing.JTextField" name="txtDireccionCliente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="14" style="0"/>
@@ -431,7 +424,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_correoe_cliente">
+    <Component class="javax.swing.JTextField" name="txtCorreoCliente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="14" style="0"/>
@@ -461,7 +454,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_salir">
+    <Component class="javax.swing.JButton" name="btnSalirCliente">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/img/ic_java_4salir.png"/>
@@ -477,7 +470,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_crear">
+    <Component class="javax.swing.JButton" name="btnCrearCliente">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/img/ic_java_1crear.png"/>
@@ -493,7 +486,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_actualizar">
+    <Component class="javax.swing.JButton" name="btnActualizarCliente">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/img/ic_java_2actulizar.png"/>
@@ -509,7 +502,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_eliminar">
+    <Component class="javax.swing.JButton" name="btnEliminarCliente">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/img/ic_java_3eliminar.png"/>
@@ -525,7 +518,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_reporte">
+    <Component class="javax.swing.JButton" name="btnReporteCliente">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/img/ic_java_5reporte.png"/>
@@ -553,17 +546,21 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jTable1">
+        <Component class="javax.swing.JTable" name="tblClientes">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
-                <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                <Column editable="true" title="Title 4" type="java.lang.Object"/>
-              </Table>
+              <Table columnCount="0" rowCount="0"/>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0"/>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

@@ -29,21 +29,21 @@ public class FrmProveedor extends javax.swing.JFrame {
         jopMensajeProveedor = new javax.swing.JOptionPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtIdProveedor = new javax.swing.JTextField();
+        txt_idproveedor = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
-        txtNombreProveedor = new javax.swing.JTextField();
+        txt_nombreproveedor = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
-        txtTelefonoProveedor = new javax.swing.JTextField();
-        btnSalir = new javax.swing.JButton();
-        btnCrear = new javax.swing.JButton();
-        btnActualizar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
-        btnReporte = new javax.swing.JButton();
+        txt_telefonoproveedor = new javax.swing.JTextField();
+        btn_salir = new javax.swing.JButton();
+        btn_crear = new javax.swing.JButton();
+        btn_actualizar = new javax.swing.JButton();
+        btn_eliminar = new javax.swing.JButton();
+        btn_reporte = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -70,12 +70,12 @@ public class FrmProveedor extends javax.swing.JFrame {
         jLabel2.setText("ID");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 40, -1));
 
-        txtIdProveedor.setEditable(false);
-        txtIdProveedor.setBackground(new java.awt.Color(169, 234, 255));
-        txtIdProveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txtIdProveedor.setForeground(new java.awt.Color(51, 51, 51));
-        txtIdProveedor.setName("txtIdProveedor"); // NOI18N
-        getContentPane().add(txtIdProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 40, -1));
+        txt_idproveedor.setEditable(false);
+        txt_idproveedor.setBackground(new java.awt.Color(169, 234, 255));
+        txt_idproveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txt_idproveedor.setForeground(new java.awt.Color(51, 51, 51));
+        txt_idproveedor.setName("txt_idproveedor"); // NOI18N
+        getContentPane().add(txt_idproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 40, -1));
 
         jSeparator1.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -91,10 +91,10 @@ public class FrmProveedor extends javax.swing.JFrame {
         jLabel3.setText("Nombre del Proveedor");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 289, -1));
 
-        txtNombreProveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txtNombreProveedor.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreProveedor.setName("txtNombreProveedor"); // NOI18N
-        getContentPane().add(txtNombreProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 280, -1));
+        txt_nombreproveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txt_nombreproveedor.setForeground(new java.awt.Color(51, 51, 51));
+        txt_nombreproveedor.setName("txt_nombreproveedor"); // NOI18N
+        getContentPane().add(txt_nombreproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 280, -1));
 
         jSeparator3.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -115,30 +115,30 @@ public class FrmProveedor extends javax.swing.JFrame {
         jLabel10.setText("Teléfono del Proveedor");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 240, -1));
 
-        txtTelefonoProveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txtTelefonoProveedor.setForeground(new java.awt.Color(51, 51, 51));
-        txtTelefonoProveedor.setName("txt_descripcion"); // NOI18N
-        getContentPane().add(txtTelefonoProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 240, -1));
+        txt_telefonoproveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txt_telefonoproveedor.setForeground(new java.awt.Color(51, 51, 51));
+        txt_telefonoproveedor.setName("txt_descripcion"); // NOI18N
+        getContentPane().add(txt_telefonoproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 240, -1));
 
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_4salir.png"))); // NOI18N
-        btnSalir.setToolTipText("Regresar al menú principal");
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 40, 30));
+        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_4salir.png"))); // NOI18N
+        btn_salir.setToolTipText("Regresar al menú principal");
+        getContentPane().add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 40, 30));
 
-        btnCrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_1crear.png"))); // NOI18N
-        btnCrear.setToolTipText("Crear (debe tener los campos llenos)");
-        getContentPane().add(btnCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 40, 30));
+        btn_crear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_1crear.png"))); // NOI18N
+        btn_crear.setToolTipText("Crear (debe tener los campos llenos)");
+        getContentPane().add(btn_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 40, 30));
 
-        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_2actulizar.png"))); // NOI18N
-        btnActualizar.setToolTipText("Actualizar (debe tener algún registro seleccionado)");
-        getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 40, 30));
+        btn_actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_2actulizar.png"))); // NOI18N
+        btn_actualizar.setToolTipText("Actualizar (debe tener algún registro seleccionado)");
+        getContentPane().add(btn_actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 40, 30));
 
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_3eliminar.png"))); // NOI18N
-        btnEliminar.setToolTipText("Eliminar (debe tener algún registro seleccionado)");
-        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 40, 30));
+        btn_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_3eliminar.png"))); // NOI18N
+        btn_eliminar.setToolTipText("Eliminar (debe tener algún registro seleccionado)");
+        getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 40, 30));
 
-        btnReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_5reporte.png"))); // NOI18N
-        btnReporte.setToolTipText("Crear un reporte (Con los registros mostrados)");
-        getContentPane().add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 40, 30));
+        btn_reporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_5reporte.png"))); // NOI18N
+        btn_reporte.setToolTipText("Crear un reporte (Con los registros mostrados)");
+        getContentPane().add(btn_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 40, 30));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoLogin.png"))); // NOI18N
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 160));
@@ -214,11 +214,11 @@ public class FrmProveedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnActualizar;
-    public javax.swing.JButton btnCrear;
-    public javax.swing.JButton btnEliminar;
-    public javax.swing.JButton btnReporte;
-    public javax.swing.JButton btnSalir;
+    public javax.swing.JButton btn_actualizar;
+    public javax.swing.JButton btn_crear;
+    public javax.swing.JButton btn_eliminar;
+    public javax.swing.JButton btn_reporte;
+    public javax.swing.JButton btn_salir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -235,8 +235,8 @@ public class FrmProveedor extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator8;
     public javax.swing.JOptionPane jopMensajeProveedor;
     public javax.swing.JTable tblProveedores;
-    public javax.swing.JTextField txtIdProveedor;
-    public javax.swing.JTextField txtNombreProveedor;
-    public javax.swing.JTextField txtTelefonoProveedor;
+    public javax.swing.JTextField txt_idproveedor;
+    public javax.swing.JTextField txt_nombreproveedor;
+    public javax.swing.JTextField txt_telefonoproveedor;
     // End of variables declaration//GEN-END:variables
 }
