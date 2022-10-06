@@ -1,6 +1,7 @@
 package modelo;
 
 public class ClienteVO {
+
     /**
      * Atributos de la clase
      */
@@ -22,6 +23,7 @@ public class ClienteVO {
 
     /**
      * Getters & Setters
+     *
      * @return -> Retorna el valor almacenado en las variables
      */
     public int getIdCliente() {
