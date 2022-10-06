@@ -1,23 +1,31 @@
 package controlador;
 
+import extras.Extras;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import modelo.ErrorDAO;
+import modelo.ErrorVO;
 import modelo.UsuarioDAO;
 import modelo.UsuarioVO;
 import vista.FrmLogin;
 import vista.FrmMenu;
 
 public class ControladorLogin implements ActionListener {
+
     FrmLogin vLogin = new FrmLogin();
     FrmMenu vMenu = new FrmMenu();
     UsuarioVO uvo = new UsuarioVO();
     UsuarioDAO udao = new UsuarioDAO();
+    Extras extras = new Extras();
+    ErrorVO evo = new ErrorVO();
+    ErrorDAO edao = new ErrorDAO();
     boolean login;
 
     /**
      * Controlador con parámetros
+     *
      * @param vLogin -> Representa la vista o JFrame del login
      * @param vMenu -> Representa la vista o JFrame del menú de administrador
      */
@@ -28,8 +36,8 @@ public class ControladorLogin implements ActionListener {
     }
 
     /**
-     * Verifica que el usuario y contraseña pertenezcan a algún registro de la
-     * tabla 'administrador' y que los campos no se encuentren vacíos
+     * Verifica que el usuario y contraseña pertenezcan a algún registro tipo
+     * administrador y que los campos no se encuentren vacíos
      */
     private void verificarUsuario() {
         login = false;
@@ -66,13 +74,9 @@ public class ControladorLogin implements ActionListener {
         this.vMenu.setVisible(true);
         this.vMenu.setLocationRelativeTo(null);
         this.vMenu.setResizable(false);
-        this.vMenu.setSize(1250,610);
+        this.vMenu.setSize(1250, 610);
     }
 
-    /**
-     * Método que administra las pulsaciones
-     * @param ae -> Representa la acción o clic del usuario
-     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == this.vLogin.btnLogin) {
@@ -83,6 +87,9 @@ public class ControladorLogin implements ActionListener {
             } else {
                 if (!(this.vLogin.txtUsuario.getText().equals("")
                         || this.vLogin.txtContrasenia.getText().equals(""))) {
+                    evo.setDescripcionError("Usuario y/o contraseña incorrectos");
+                    evo.setFechaError(extras.devolverFechaActual());
+                    edao.insertarError(evo);
                     this.vLogin.lblMensajeLogin.setText("* Usuario y/o contraseña incorrectos");
                 }
             }

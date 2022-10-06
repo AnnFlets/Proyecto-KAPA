@@ -26,28 +26,30 @@ public class FrmProveedor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jop_mensajes = new javax.swing.JOptionPane();
+        jopMensajeProveedor = new javax.swing.JOptionPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txt_idproveedor = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
-        txt_nombre_proveedor = new javax.swing.JTextField();
+        txt_nombreproveedor = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
-        txt_telefono_proveedor = new javax.swing.JTextField();
+        txt_telefonoproveedor = new javax.swing.JTextField();
         btn_salir = new javax.swing.JButton();
         btn_crear = new javax.swing.JButton();
         btn_actualizar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
         btn_reporte = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblProveedores = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Administrador de Proveedores");
@@ -57,103 +59,114 @@ public class FrmProveedor extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1100, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("INGRESO DE PROVEEDOR");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel2.setForeground(java.awt.Color.white);
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("ID");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 44, 40, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 40, -1));
 
+        txt_idproveedor.setEditable(false);
+        txt_idproveedor.setBackground(new java.awt.Color(169, 234, 255));
         txt_idproveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txt_idproveedor.setText("ID");
+        txt_idproveedor.setForeground(new java.awt.Color(51, 51, 51));
         txt_idproveedor.setName("txt_idproveedor"); // NOI18N
-        getContentPane().add(txt_idproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 70, 40, -1));
+        getContentPane().add(txt_idproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 40, -1));
 
         jSeparator1.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 10, 350));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 10, 350));
 
         jSeparator2.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 29, -1, 65));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 85, -1, 50));
 
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel3.setForeground(java.awt.Color.white);
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Nombre del Proveedor");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 44, 289, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 289, -1));
 
-        txt_nombre_proveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txt_nombre_proveedor.setText("Nom. Proveedor");
-        txt_nombre_proveedor.setName("txt_nombre_proveedor"); // NOI18N
-        getContentPane().add(txt_nombre_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 69, 289, -1));
+        txt_nombreproveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txt_nombreproveedor.setForeground(new java.awt.Color(51, 51, 51));
+        txt_nombreproveedor.setName("txt_nombreproveedor"); // NOI18N
+        getContentPane().add(txt_nombreproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 280, -1));
 
         jSeparator3.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 29, -1, 65));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 85, -1, 50));
 
         jSeparator4.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 29, 0, 62));
 
+        jSeparator8.setBackground(new java.awt.Color(204, 153, 255));
         jSeparator8.setForeground(new java.awt.Color(204, 153, 255));
         jSeparator8.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        getContentPane().add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 670, 20));
+        getContentPane().add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 700, 10));
 
-        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Teléfono del Proveedor");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 280, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 240, -1));
 
-        txt_telefono_proveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        txt_telefono_proveedor.setText("Tel. Proveedor");
-        txt_telefono_proveedor.setName("txt_descripcion"); // NOI18N
-        getContentPane().add(txt_telefono_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 280, -1));
+        txt_telefonoproveedor.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        txt_telefonoproveedor.setForeground(new java.awt.Color(51, 51, 51));
+        txt_telefonoproveedor.setName("txt_descripcion"); // NOI18N
+        getContentPane().add(txt_telefonoproveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 240, -1));
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_4salir.png"))); // NOI18N
         btn_salir.setToolTipText("Regresar al menú principal");
-        getContentPane().add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 40, 30));
+        getContentPane().add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 40, 30));
 
         btn_crear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_1crear.png"))); // NOI18N
         btn_crear.setToolTipText("Crear (debe tener los campos llenos)");
-        getContentPane().add(btn_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 40, 30));
+        getContentPane().add(btn_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 40, 30));
 
         btn_actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_2actulizar.png"))); // NOI18N
         btn_actualizar.setToolTipText("Actualizar (debe tener algún registro seleccionado)");
-        getContentPane().add(btn_actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 40, 30));
+        getContentPane().add(btn_actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 40, 30));
 
         btn_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_3eliminar.png"))); // NOI18N
         btn_eliminar.setToolTipText("Eliminar (debe tener algún registro seleccionado)");
-        getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 40, 30));
+        getContentPane().add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 40, 30));
 
         btn_reporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ic_java_5reporte.png"))); // NOI18N
         btn_reporte.setToolTipText("Crear un reporte (Con los registros mostrados)");
-        getContentPane().add(btn_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 40, 30));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 650, 340));
+        getContentPane().add(btn_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 40, 30));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoLogin.png"))); // NOI18N
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 700, 160));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 160));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoLogin.png"))); // NOI18N
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 156, 40, 350));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 40, 350));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblProveedores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(tblProveedores);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 620, 280));
+
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("De doble clic sobre el proveedor para seleccionarlo.");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 660, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -212,16 +225,18 @@ public class FrmProveedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JOptionPane jop_mensajes;
+    public javax.swing.JOptionPane jopMensajeProveedor;
+    public javax.swing.JTable tblProveedores;
     public javax.swing.JTextField txt_idproveedor;
-    public javax.swing.JTextField txt_nombre_proveedor;
-    public javax.swing.JTextField txt_telefono_proveedor;
+    public javax.swing.JTextField txt_nombreproveedor;
+    public javax.swing.JTextField txt_telefonoproveedor;
     // End of variables declaration//GEN-END:variables
 }

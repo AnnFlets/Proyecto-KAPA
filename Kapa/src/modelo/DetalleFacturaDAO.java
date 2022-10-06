@@ -1,10 +1,15 @@
 package modelo;
 
 import conexion.Conector;
+import extras.Extras;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class DetalleFacturaDAO implements ConsultarDetalleFactura{
+
+    ErrorVO evo = new ErrorVO();
+    ErrorDAO edao = new ErrorDAO();
+    Extras extras = new Extras();
 
     @Override
     public ArrayList<DetalleFacturaVO> consultarDetalleFactura() {
@@ -31,7 +36,9 @@ public class DetalleFacturaDAO implements ConsultarDetalleFactura{
             }
             conector.desconectar();
         }catch(Exception e){
-            System.err.println("Error[Consultar-Detalle-Factura]: " + e.getMessage());
+            evo.setDescripcionError("[Consultar-Detalle-Factura]: " + e.getMessage());
+            evo.setFechaError(extras.devolverFechaActual());
+            edao.insertarError(evo);
             conector.desconectar();
         }
         return informacionDetalle;

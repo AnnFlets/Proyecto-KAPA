@@ -1,40 +1,40 @@
 package extras;
 
-import conexion.Conector;
-import java.io.FileInputStream;
-import java.sql.PreparedStatement;
-import java.util.ArrayList;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Extras {
-    
-    //*METODO GUARDAR IMAGEN
-    
-   // public boolean guardarImagen(String ruta,String nombre){
-//	String insert = "insert into Imagenes(imagen,nombre) values(?,?)";
-//	FileInputStream fis = null;
-//	PreparedStatement ps = null;
-//	try {
-//		Conector.conectar().setAutoCommit(false);
-//		File file = new File(ruta);
-//		fis = new FileInputStream(file);
-//		ps = Conector.prepareStatement(insert);
-//		ps.setBinaryStream(1,fis,(int)file.length());
-//		ps.setString(2, nombre);
-//		ps.executeUpdate();
-//		Conector.commit();
-//		return true;
-//	} catch (Exception ex) {
-//		Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
-//	}finally{
-//		try {
-//			ps.close();
-//			fis.close();
-//		} catch (Exception ex) {
-//			Logger.getLogger(BaseDatos.class.getName()).log(Level.SEVERE, null, ex);
-//		}
-//	}        
-//	return false;
-//}
-   
-  
+
+    private String fechaCambiar;
+
+    public String cambiarFormatoAFechaVista(String fecha) {
+        DateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = formato.parse(fecha);
+            String fechaFormato = new SimpleDateFormat("dd/MM/yyyy").format(date);
+            fechaCambiar = fechaFormato;
+        } catch (Exception e) {
+            System.err.println("[Error-Cambio-Fecha]: " + e.getMessage());
+        }
+        return fechaCambiar;
+    }
+
+    public String cambiarFormatoAFechaBD(String fecha) {
+        DateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date date = formato.parse(fecha);
+            String fechaFormato = new SimpleDateFormat("yyyy-MM-dd").format(date);
+            fechaCambiar = fechaFormato;
+        } catch (Exception e) {
+            System.err.println("[Error-Cambio-Fecha]: " + e.getMessage());
+        }
+        return fechaCambiar;
+    }
+
+    public String devolverFechaActual() {
+        String fecha = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+        return fecha;
+    }
 }

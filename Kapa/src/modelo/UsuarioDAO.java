@@ -1,10 +1,15 @@
 package modelo;
 
 import conexion.Conector;
+import extras.Extras;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class UsuarioDAO implements ConsultarUsuario{
+    
+    ErrorVO evo = new ErrorVO();
+    ErrorDAO edao = new ErrorDAO();
+    Extras extras = new Extras();
 
     @Override
     public ArrayList<UsuarioVO> consultarUsuario() {
@@ -27,7 +32,9 @@ public class UsuarioDAO implements ConsultarUsuario{
             }
             conector.desconectar();
         }catch(Exception e){
-            System.err.println("Error[Consultar-Usuario]: " + e.getMessage());
+            evo.setDescripcionError("[Consultar-Usuario]: " + e.getMessage());
+            evo.setFechaError(extras.devolverFechaActual());
+            edao.insertarError(evo);
             conector.desconectar();
         }
         return informacionUsuario;
